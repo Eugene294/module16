@@ -33,5 +33,12 @@ namespace Practices.Tests
             Calculator calc = new Calculator();
             Assert.That(calc.Division(50, 5) == 10);
         }
+
+        [Test]
+        public void Division_MustThrowException()
+        {
+            var calculator = new Calculator();
+            Assert.Throws<DivideByZeroException>(() => calculator.Division(30, 0));
+        }
     }
 }
